@@ -1,3 +1,5 @@
+'''input data copied locally from: https://www.google.com/basepages/producttype/taxonomy-with-ids.en-US.txt '''
+
 import regex
 import json
 
