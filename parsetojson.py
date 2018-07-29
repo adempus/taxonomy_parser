@@ -32,8 +32,7 @@ def categorize(dic, sequence=list()):
     if len(sequence) > 0:
         cat = sequence[0].strip()
         if cat in dic:
-            dic = dic[cat]
-            categorize(dic, sequence[1:])
+            categorize(dic[cat], sequence[1:])
         else:
             dic[cat] = {}
 
