@@ -12,7 +12,6 @@ def inFromFile(inPath):
     with open(inPath) as file:
         return file.readlines()
 
-
 def parseData(contents):
     ''':param contents: a list of lists containing sequentially parsed categories from file. '''
     for cont in contents:
@@ -23,7 +22,6 @@ def parseData(contents):
         elif '>' in parsedStr:
             splitCats = parsedStr.split('>')
             categorize(categoryDict, splitCats)
-
 
 def categorize(dic, sequence=list()):
     ''' :param dic: a nested dictionary of categories in categoryDict.
@@ -36,20 +34,17 @@ def categorize(dic, sequence=list()):
         else:
             dic[cat] = {}
 
-
 def outToFile(outPath):
     ''':param outPath: path to the file being written to. '''
     with open(outPath, 'w') as file:
         file.write(
             json.dumps(categoryDict, indent=10))
 
-
 def main():
     contents = inFromFile('./res/taxonomies.txt')
     # print(contents)
     parseData(contents)
     outToFile('./res/jsonOutput.json')
-
 
 if '__main__'==__name__:
     main()
